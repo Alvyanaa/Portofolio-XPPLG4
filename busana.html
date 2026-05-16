@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>SMK Digital</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"/>
+
+
+<style>
+
+body{
+background:#f4f6f9;
+}
+
+/* HERO */
+.hero{
+background:linear-gradient(rgba(94, 94, 91, 0.85),rgba(240, 246, 130, 0.85)),
+url("./yellowflower.jpg");
+background-size:cover;
+background-position:center;
+color:rgb(11, 11, 11);
+padding:120px 0;
+text-align:center;
+}
+
+.hero h1{
+font-weight:700;
+}
+
+/* Card & UI Elements */
+        .main-card { border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .icon-box {
+            width: 50px; height: 50px;
+            background-color: #eef4ff;
+            color: var(--primary-blue);
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 10px; font-size: 1.5rem;
+        }
+        
+        .sidebar-card { border: none; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .sidebar-header { background-color: var(--dark-bg); color: white; padding: 15px; font-weight: bold; }
+
+
+/* BADGE */
+.badge-custom{
+background:#0d6efd;
+}
+
+footer{
+background:rgb(253, 191, 48);
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-warning fixed-top">
+<div class="container">
+
+<a class="navbar-brand fw-bold" href="#">
+<img src="./img/767e3d68039f279077dbec648aab5590-removebg-preview.png" width="28">
+SMK DIGITAL
+</a>
+
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="index2.html">Beranda</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#">Visi Misi</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#">Data Siswa</a>
+</li>
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Jurusan</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="pplg.html">PPLG</a></li>
+<li><a class="dropdown-item" href="tjktt.html">TJKT</a></li>
+<li><a class="dropdown-item" href="otomotif.html">OTOMOTIF</a></li>
+<li><a class="dropdown-item" href="busana.html">BUSANA</a></li>
+<li><a class="dropdown-item" href="kuliner.html">KULINER</a></li>
+<li><a class="dropdown-item" href="index.html">Lihat lainnya..</a></li>
+</ul>
+</li>
+
+</ul>
+</div>
+
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container mt-5">
+
+<h1>DESAIN DAN PRODUKSI BUSANA</h1>
+
+<p>
+Jurusan yang membekali peserta didik dengan pengetahuan, keterampilan, 
+dan kreativitas agar siap 
+menjadi tenaga profesional di bidang desain dan produksi busana.</p>
+
+</div>
+</section>
+
+<!-- CONTENT -->
+<div class="container mt-5">
+
+<div class="row g-4">
+
+<!-- LEFT -->
+<div class="col-lg-8">
+
+<div class="card p-4">
+
+<h4 class="fw-bold mb-3">
+Membangun Masa Depan Melalui Kreativitas Fashion
+</h4>
+
+<p class="text-muted">
+Desain dan Produksi Busana merupakan program keahlian yang mempelajari 
+proses pembuatan pakaian mulai dari perancangan desain, pembuatan pola, 
+pemotongan kain, hingga menjahit dan finishing. Siswa juga belajar
+ tentang tren fashion, pemilihan bahan, serta teknik produksi busana 
+ secara profesional. Program ini bertujuan membekali siswa dengan 
+ keterampilan dan kreativitas agar mampu bersaing 
+di industri fashion maupun membuka usaha sendiri.
+</p>
+
+<div class="row mt-4">
+
+<div class="col-md-6">
+<div class="d-flex gap-3">
+
+<div class="fs-3 text-primary">
+<i class="bi bi-bag-check-fill text-warning"></i>
+</div>
+
+<div>
+<h6 class="fw-bold">Fashion Design</h6>
+<small class="text-muted">
+Belajar membuat desain busana, memahami tren fashion, 
+dan mengembangkan kreativitas dalam merancang pakaian.
+</small>
+</div>
+
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="d-flex gap-3">
+
+<div class="fs-3 text-success">
+<i class="bi bi-pin-angle-fill text-warning"></i>
+</div>
+
+<div>
+<h6 class="fw-bold">Garment Production</h6>
+<small class="text-muted">
+Mempelajari pembuatan pola, teknik menjahit,
+ serta proses produksi pakaian hingga siap digunakan.
+</small>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<hr class="my-4">
+
+<h5 class="fw-bold">Fasilitas Unggulan</h5>
+
+<ul class="list-group list-group-flush mt-3">
+
+<li class="list-group-item d-flex justify-content-between">
+Laboratorium Tata Busana (Fashion Lab)
+<span class="badge badge-custom rounded-pill bg-warning">4 ruang</span>
+</li>
+
+<li class="list-group-item d-flex justify-content-between">
+Mesin Jahit Modern
+<span class="badge badge-custom rounded-pill bg-warning">Lengkap</span>
+</li>
+
+<li class="list-group-item d-flex justify-content-between">
+Peralatan Desain dan Pembuatan Pola
+
+<span class="badge badge-custom rounded-pill bg-warning">Tersedia versi modern</span>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+<div class="col-lg-4">
+
+<!-- STATUS -->
+ <div class="container">
+<div class="card mb-4">
+
+<h5 class="text-center fw-bold bg-warning text-white p-3 rounded-top">
+Status Pendaftaran
+</h5>
+
+<div class="card-body">
+
+<div class="d-flex justify-content-between mt-3 mb-1">
+<strong>Kuota Terisi</strong>
+<strong>50%</strong>
+</div>
+ <div class="progress">
+ <div
+ class="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+ style="width:50%">
+ </div>
+</div> 
+
+<a href="#" class="btn btn-warning w-100 fw-bold py-2 mv-2 mt-4 mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal">DAFTAR SEKARANG</a>
+           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header bg-warning">
+                <h1 class="modal-title fs-5 bg-warning text-white" id="exampleModalLabel"><i class="bi bi-person-fill-add" style="margin-right: 10px;"></i>Tambah Siswa Baru</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+           <div class="mb-3">
+            <label for="disabledTextInput" class="form-label fw-bold">Nama Lengkap</label>
+            <input type="text" id="disabledTextInput" class="form-control" placeholder="Masukkan Nama Anda...">
+            </div>
+            <div class="mb-3">
+            <label for="disabledTextInput" class="form-label fw-bold">NIS</label>
+            <input type="text" id="disabledTextInput" class="form-control" placeholder="Masukkan NIS Anda...">
+            </div>
+             <div class="mb-3">
+            <label for="disabledTextInput" class="form-label fw-bold">TTL</label>
+            <input type="text" id="disabledTextInput" class="form-control" placeholder="Contoh : Semarang, 23 Juni 2009">
+            </div>
+            <div class="mb-3">
+            <label for="disabledSelect" class="form-label fw-bold">Jenis Jalur Pendaftaran</label>
+            <select id="disabledSelect" class="form-select" placeholder="Pilih Jalur...">
+                <option>Pilih Jalur...</option>
+                <option>Prestasi</option>
+                <option>Domisili</option>
+                <option>Tes</option>
+                <option>Mutasi</option>
+            </select>
+            </div>
+            <div class="mb-3">
+            <label for="formFile" class="form-label fw-bold">Foto Siswa</label>
+            <input class="form-control" type="file" id="formFile">
+            <div id="passwordHelpBlock" class="form-text">
+            Format: JPG, PNG (Maks 5MB)
+            </div>
+            </div>
+            </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-warning">Daftar</button>
+            </div>
+            </div>
+        </div>
+        </div>
+             <button onclick="location.href='index.html'" class="btn btn-light w-100 text-secondary small"> <i class="bi bi-arrow-left me-2"></i>Kembali</button>
+          </div>
+        </div>
+
+        
+
+<div class="card sidebar-card bg-white">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80" class="card-img-top" alt="Siswa">
+                    <div class="card-body">
+                        <p class="card-text fst-italic text-muted small mb-3">
+                            “Setiap jahitan menyimpan cerita perjuangan kami di SMK.Dari benang dan kain, 
+                            kami merajut mimpi menjadi nyata.”
+                        </p>
+                        <h6 class="fw-bold mb-0">- Alvyana, Alumni 2521</h6>
+                    </div>
+                </div>
+    
+            </div>
+            </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+© 2026 SMK DIGITAL. Seluruh Hak Cipta Dilindungi.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
