@@ -1,493 +1,723 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Catering Website</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"/>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f8f9fa;
-    }
-    .navbar-brand {
-      font-weight: 700;
-      color: #2e7d32 !important;
-    }
-    .hero {
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      background: #f4f8f2;
-      padding: 60px 0;
-    }
-    .hero h1 {
-      font-size: 56px;
-      font-weight: 700;
-    }
-    .btn-green {
-      background: #2e7d32;
-      color: white;
-      border-radius: 30px;
-      padding: 10px 25px;
-    }
-    .btn-outline-green {
-      border: 1px solid #2e7d32;
-      color: #2e7d32;
-      border-radius: 30px;
-      padding: 10px 25px;
-    }
-    .food-img {
-      width: 100%;
-      border-radius: 50%;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    }
-    .feature-card {
-      background: #e2f0e2;
-      border-radius: 20px;
-      padding: 30px 20px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-      transition: 0.3s;
-      height: 100%;
-    }
-    .feature-card:hover {
-      transform: translateY(-5px);
-    }
-    .icon-box {
-      font-size: 28px;
-      color: #2e7d32;
-      margin-bottom: 15px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - AlvyanaSA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<style>
 
-    /* FEEDBACK SECTION */
-.feedback-section {
-    background: #ffffff;
-    padding: 80px 0;
+/* DARK MODE */
+:root {
+    --bg-body:         radial-gradient(circle, #0a1a2f, #06111f);
+    --bg-main:         #071827;
+    --bg-card:         #0a1a2f;
+    --bg-contact:      rgba(255,255,255,0.08);
+    --bg-form:         rgba(255,255,255,0.1);
+    --bg-footer:       #071827;
+    --border-color:    #00cfff;
+    --box-shadow:      0 0 20px rgba(0,207,255,0.4);
+    --text:            #ffffff;
+    --text-muted:      #b0b0b0;
+    --accent:          #00cfff;
+    --pink:            #ff2d75;
+    --progress-track:  #bfc9e6;
+    --footer-border:   rgba(255,255,255,0.2);
+    --form-color:      #ffffff;
+    --form-placeholder:#cccccc;
+    --info-box-border: #00cfff;
+    --info-text:       #dddddd;
 }
 
-.feedback-title small {
-    color: #888;
+/* LIGHT MODE */
+[data-theme="light"] {
+    --bg-body:         radial-gradient(circle, #d6f0fa, #eaf6ff);
+    --bg-main:         #ffffff;
+    --bg-card:         #f0f9ff;
+    --bg-contact:      rgba(0,160,200,0.07);
+    --bg-form:         rgba(0,150,200,0.08);
+    --bg-footer:       #dff4ff;
+    --border-color:    #00a8cc;
+    --box-shadow:      0 0 20px rgba(0,168,204,0.25);
+    --text:            #0a1a2f;
+    --text-muted:      #4a6070;
+    --accent:          #0096bb;
+    --pink:            #e0195f;
+    --progress-track:  #c8e8f5;
+    --footer-border:   rgba(0,0,0,0.15);
+    --form-color:      #0a1a2f;
+    --form-placeholder:#5a7a8a;
+    --info-box-border: #00a8cc;
+    --info-text:       #1a3a4f;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    background: var(--bg-body);
+    font-family: Arial, sans-serif;
+    color: var(--text);
+    transition: background 0.4s, color 0.4s;
+    margin: 0;
+}
+
+.main-box {
+    background: var(--bg-main);
+    border: 2px solid var(--border-color);
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: var(--box-shadow);
+    transition: background 0.4s, border-color 0.4s, box-shadow 0.4s;
+}
+
+/* LOGO */
+.logo-text {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text) !important;
+    text-decoration: none;
+}
+.logo-text span {
+    color: var(--accent);
+    text-shadow: 0 0 8px var(--accent), 0 0 20px var(--accent);
+    transition: color 0.4s, text-shadow 0.4s;
+}
+
+/* NAVBAR */
+.navbar-brand { color: var(--text) !important; font-size: 24px; }
+
+.navbar .nav-link {
+    color: var(--text) !important;
+    margin: 0 10px;
     font-size: 14px;
+    position: relative;
+    transition: color 0.3s, transform 0.3s;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+.navbar .nav-link:hover {
+    color: var(--accent) !important;
+    transform: scale(1.08);
+}
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -4px;
+    width: 0; height: 2px;
+    background: var(--accent);
+    transition: width 0.3s;
+}
+.navbar .nav-link:hover::after { width: 100%; }
+
+/* TOGGLE BUTTON */
+#theme-toggle {
+    border: 1.5px solid var(--border-color);
+    background: transparent;
+    color: var(--accent);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-left: 8px;
+}
+#theme-toggle:hover {
+    background: var(--accent);
+    color: #fff;
 }
 
-.feedback-title h2 {
+/* BUTTONS */
+.btn-pink { background: var(--pink); color: white; border-radius: 8px; padding: 8px 15px; border: none; }
+
+/* HERO */
+.hero-section { min-height: 450px; padding: 40px 0; }
+.hero-name {
+    font-family: Georgia, serif;
+    font-size: 50px;
     font-weight: 700;
-    font-size: 42px;
-    margin-top: 8px;
-    margin-bottom: 40px;
+    color: var(--text);
+    transition: color 0.4s;
+}
+.hero-p { color: var(--text-muted); transition: color 0.4s; }
+
+.image-glow {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 40px var(--accent);
+    transition: box-shadow 0.4s;
+}
+.profile-img {
+    width: 280px; height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--accent);
+    animation: floating 2s ease-in-out infinite;
+}
+@keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-10px); }
 }
 
-.feedback-card {
-    border: none;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: 0.3s ease;
+.social-icons i {
+    font-size: 20px;
+    color: var(--accent);
+    margin-right: 15px;
+    cursor: pointer;
+    transition: color 0.4s;
+}
+
+#typing-text { color: var(--accent) !important; transition: color 0.4s; }
+#typing-text::after { content: "|"; animation: blink 0.7s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* STATS */
+.stats p { color: var(--text-muted); font-size: 14px; transition: color 0.4s; }
+.stat-item { border-right: 1px solid var(--border-color); transition: border-color 0.4s; }
+.icon-stat { color: var(--text); transition: color 0.4s; }
+
+/* ABOUT */
+.about-img {
+    width: 320px; height: 380px;
+    object-fit: cover;
+    border-radius: 80px;
+    box-shadow: 0 0 20px var(--accent);
+    transition: box-shadow 0.4s;
+}
+.about-title {
+    font-size: 42px; font-weight: bold;
+    color: var(--text);
+    position: relative;
+    transition: color 0.4s;
+}
+.about-title::after {
+    content: "";
+    width: 60px; height: 3px;
+    background: var(--accent);
+    position: absolute;
+    left: 0; bottom: -10px;
+    transition: background 0.4s;
+}
+.about-text { color: var(--text-muted); line-height: 1.8; font-size: 15px; transition: color 0.4s; }
+
+.info-box {
+    border: 1px solid var(--info-box-border);
+    padding: 10px; border-radius: 4px; width: 65%;
+    transition: border-color 0.4s;
+}
+.info-box p { color: var(--info-text); font-size: 14px; margin-bottom: 10px; transition: color 0.4s; }
+.info-box strong { color: var(--text); }
+
+/* SECTION TITLES */
+.project-title { font-size: 40px; font-weight: bold; color: var(--text); transition: color 0.4s; }
+.project-title span {
+    color: var(--accent);
+    text-shadow: 0 0 10px var(--accent);
+    transition: color 0.4s, text-shadow 0.4s;
+}
+.hero-project {
+    font-size: 1rem; font-weight: 600;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--text-muted);
+    position: relative; display: inline-block;
+    transition: color 0.4s;
+}
+.hero-project::after {
+    content: "";
+    position: absolute; left: 50%; transform: translateX(-50%);
+    bottom: -25px; width: 200px; height: 3px;
+    background: var(--accent); border-radius: 5px;
+    box-shadow: 0 0 10px var(--accent);
+    transition: background 0.4s, box-shadow 0.4s;
+}
+
+/* PROJECT CARDS */
+.project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 18px; overflow: hidden;
+    transition: all 0.35s;
     height: 100%;
 }
+.project-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,207,255,0.2); }
+.project-img { width: 100%; height: 200px; object-fit: cover; }
+.project-content { padding: 18px; color: var(--text); transition: color 0.4s; }
+.project-content .text-secondary { color: var(--text-muted) !important; }
+.project-buttons { display: flex; justify-content: space-between; margin-top: 15px; }
 
-.feedback-card:hover {
-    transform: translateY(-5px);
+/* SKILLS */
+.skill-icon { width: 60px; height: 60px; object-fit: contain; }
+.custom-progress {
+    height: 22px; border-radius: 20px;
+    background: var(--progress-track);
+    overflow: hidden; transition: background 0.4s;
+}
+.progress-bar {
+    background: linear-gradient(90deg, var(--accent), #1b8ca8);
+    font-size: 12px; font-weight: bold; border-radius: 20px;
+}
+.right-side {
+    border-left: 2px solid var(--border-color);
+    padding-left: 40px;
+    transition: border-color 0.4s;
+}
+.tools-btn {
+    background: var(--accent); border: none;
+    padding: 12px 30px; border-radius: 30px;
+    color: white; font-weight: bold; font-size: 22px;
+    transition: background 0.4s;
+}
+.tool-icon { width: 90px; height: 90px; object-fit: contain; }
+.tool-text { color: var(--text); font-size: 18px; transition: color 0.4s; }
+
+@media(max-width:991px) {
+    .right-side { border-left: none; border-top: 2px solid var(--border-color); padding-left: 0; padding-top: 40px; margin-top: 40px; }
+    .tool-icon { width: 70px; height: 70px; }
 }
 
-.feedback-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
+/* CONTACT */
+.contact-box {
+    background: var(--bg-contact);
+    border-radius: 20px; backdrop-filter: blur(10px);
+    color: var(--text);
+    transition: background 0.4s, color 0.4s;
+}
+.contact-box a { color: var(--text); text-decoration: none; transition: color 0.4s; }
+.contact-box a:hover { color: var(--accent); }
+.contact-box h3 { font-weight: bold; }
+.contact-box i { margin-right: 10px; color: var(--accent); transition: color 0.4s; }
+
+.form-control {
+    background: var(--bg-form) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--form-color) !important;
+    transition: background 0.4s, border-color 0.4s, color 0.4s;
+}
+.form-control::placeholder { color: var(--form-placeholder) !important; }
+.form-control:focus { box-shadow: 0 0 0 0.2rem rgba(0,168,204,0.3) !important; }
+
+.line { width: 60px; height: 3px; background: var(--accent); border-radius: 3px; transition: background 0.4s; }
+
+/*  FOOTER  */
+.footer-section { padding: 0; margin-top: 0; }
+.footer-box {
+    background: var(--bg-footer);
+    padding: 40px 50px;
+    display: flex; justify-content: space-between;
+    border-radius: 0 0 25px 25px;
+    align-items: center; flex-wrap: wrap;
+    transition: background 0.4s;
+}
+.footer-logo { padding-right: 40px; border-right: 1px solid var(--footer-border); }
+.footer-links { padding: 0 40px; }
+.footer-links a {
+    color: var(--text); margin-right: 18px;
+    text-decoration: none; font-size: 0.9rem;
+    font-weight: 600; letter-spacing: 0.3em;
+    text-transform: uppercase; transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--accent); }
+.footer-links p { color: var(--text-muted); margin-top: 10px; font-size: 14px; }
+.footer-icons a { color: var(--accent); font-size: 18px; margin-left: 15px; transition: color 0.3s; }
+.footer-icons a:hover { color: var(--text-muted); }
+.footer-contact p { color: var(--text-muted); font-size: 14px; }
+
+@media(max-width:768px) {
+    .footer-box { flex-direction: column; text-align: center; gap: 30px; }
+    .footer-logo { border-right: none; padding-right: 0; }
+    .footer-links { padding: 0; }
 }
 
-.feedback-card .card-body {
-    padding: 20px;
-}
+/*  SCROLL REVEAL */
+.hidden { opacity: 0; transform: translateY(50px); transition: all 0.8s ease; }
+.show   { opacity: 1; transform: translateY(0); }
 
-.feedback-card h5 {
-    font-weight: 700;
-    font-size: 22px;
-}
-
-.feedback-card p {
-    color: #b53838;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.feedback-card .btn {
-    border-radius: 30px;
-    padding: 6px 18px;
-    font-size: 14px;
-}
-
-/* PROMO SECTION */
-.promo-section {
-    background: #f3f7f1;
-    padding: 90px 0;
-}
-
-.promo-section small {
-    color: #888;
-    font-size: 14px;
-}
-
-.promo-section h1 {
-    font-size: 52px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 15px 0;
-}
-
-.promo-section p {
-    color: #666;
-    font-size: 15px;
-    line-height: 1.8;
-    margin-bottom: 25px;
-}
-
-.promo-section img {
-    border-radius: 25px;
-    width: 100%;
-}
-
-.promo-section .btn {
-    background: #2e7d32;
-    border: none;
-    border-radius: 30px;
-    padding: 10px 25px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .feedback-title h2 {
-        font-size: 32px;
-    }
-
-    .promo-section h1 {
-        font-size: 34px;
-    }
-
-    .promo-section img {
-        margin-top: 30px;
-    }
-}
-
-.footer-section {
-    background: #2e7d32;
-    padding: 18px 0;
-}
-
-.footer-content {
-    color: white;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.footer-content span {
-    opacity: 0.95;
-}
-
-
-  </style>
+</style>
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg bg-white shadow-sm py-3">
-    <div class="container">
-      <a class="navbar-brand" href="#">Gadly</a>
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar-nav ms-auto gap-3">
-          <li class="nav-item"><a class="nav-link" href="../tugas6/index.html" target="_blank">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#makanan">Makanan</a></li>
-          <li class="nav-item"><a class="nav-link" href="#harga">Harga</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
-          <li class="nav-item"><a class="btn btn-green" href="#">Booking</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<!--HTML-->
+<div class="container py-4">
+    <div class="main-box">
 
-  <section class="hero">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6">
-          <p class="text-success fw-semibold">Home Photo Super</p>
-          <h1>Best Catering <br> Website</h1>
-          <p class="text-muted my-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro incidunt voluptate explicabo? Voluptates, pariatur. Tempora, pariatur. Corrupti, ipsum.
-             Eveniet qui mollitia architecto modi autem amet tempore maiores. Facilis, officiis voluptatem! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, doloribus! Vel ipsa minima animi expedita quos facilis molestias laboriosam pariatur earum error?</p>
-          <div class="d-flex gap-3">
-            <a href="#" class="btn btn-green">Pesan Sekarang</a>
-            <a href="#" class="btn btn-outline-green">Lihat Menu</a>
-          </div>
-        </div>
-        <div class="col-lg-6 text-center mt-4 mt-lg-0">
-          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" class="food-img" alt="food">
-        </div>
-      </div>
-    </div>
-  </section>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand logo-text" href="#">Alv<span>yana</span>SA</a>
 
-  <section class="py-5" id="harga">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-md-3 col-sm-6">
-          <div class="feature-card">
-            <div class="icon-box">
-             <a href="#" class="text-success"><i class="bi bi-bootstrap"></i></a>
-            </div>
-            <h5><strong>Blue Menu</strong></h5>
-            <p class="text-muted small">Pilihan menu terbaik dan lezat.</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="feature-card">
-            <div class="icon-box">
-              <a href="#" class="text-success"><i class="bi bi-fire"></i></a>
-            </div>
-            <h5><strong>Fast Service</strong></h5>
-            <p class="text-muted small">Pelayanan cepat dan profesional.</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="feature-card">
-            <div class="icon-box">
-              <a href="#" class="text-success"><i class="bi bi-flower2"></i></a>
-            </div>
-            <h5><strong>Best Quality</strong></h5>
-            <p class="text-muted small">Bahan makanan segar dan berkualitas.</p>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="feature-card">
-            <div class="icon-box">
-              <a href="#" class="text-success"><i class="bi bi-markdown"></i></a>
-            </div>
-            <h5><strong>Easy Order</strong></h5>
-            <p class="text-muted small">Pemesanan mudah dan praktis.</p>
-          </div>
-        </div>
-
-       <div class="col-md-3 col-sm-6">
-          <div class="feature-card">
-            <div class="icon-box">
-              <a href="#" class="text-success"><i class="bi bi-person-arms-up"></i></a>
-            </div>
-            <h5><strong>Amoiry Stay</strong></h5>
-            <p class="text-muted small">Pemesanan mudah dan praktis.</p>
-          </div>
-        </div>
-
-         <div class="col-md-3 col-sm-6">
-          <div class="feature-card">
-            <div class="icon-box">
-              <a href="#" class="text-success"><i class="bi bi-pin-angle"></i></a>
-            </div>
-            <h5><strong>New Plator</strong></h5>
-            <p class="text-muted small">Pemesanan mudah dan praktis.</p>
-          </div>
-        </div>
-
-         <div class="col-md-3 col-sm-6">
-          <div class="feature-card">
-            <div class="icon-box">
-              <a href="#" class="text-success"><i class="bi bi-yin-yang"></i></a>
-            </div>
-            <h5><strong>Fluel Altrodirody</strong></h5>
-            <p class="text-muted small">Pemesanan mudah dan praktis.</p>
-          </div>
-        </div>
-
-         <div class="col-md-3 col-sm-6">
-          <div class="feature-card">
-            <div class="icon-box">
-              <a href="#" class="text-success"><i class="bi bi-tencent-qq"></i></a>
-            </div>
-            <h5><strong>Folorcions</strong></h5>
-            <p class="text-muted small">Pemesanan mudah dan praktis.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Feedback Section -->
-<section class="py-5" style="background: #ffffff;" id="makanan">
-    <div class="container">
-        <div class="text-center mb-5">
-            <small class="text-muted">In higher development</small>
-            <h2 class="fw-bold">Taly Feedback</h2>
-        </div>
-
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card border-0 shadow-sm rounded-4">
-                    <img src="./yum.jpg" class="card-img-top rounded-top-4" alt="">
-                    <div class="card-body">
-                        <h5 class="fw-bold">High Pisig yeas</h5>
-                        <p class="text-muted small">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </p>
-                        <button class="btn btn-outline-success rounded-pill btn-sm">
-                            Review
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card border-0 shadow-sm rounded-4">
-                    <img src="./nasgor.jpg" class="card-img-top rounded-top-4" alt="">
-                    <div class="card-body">
-                        <h5 class="fw-bold">Whle lvhe to oan liie</h5>
-                        <p class="text-muted small">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </p>
-                        <button class="btn btn-outline-success rounded-pill btn-sm">
-                            Review
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card border-0 shadow-sm rounded-4">
-                    <img src="./pasta.jpg" class="card-img-top rounded-top-4" alt="">
-                    <div class="card-body">
-                        <h5 class="fw-bold">Dergam fatetts</h5>
-                        <p class="text-muted small">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </p>
-                        <button class="btn btn-outline-success rounded-pill btn-sm">
-                            Review
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Promo Section -->
-<section class="py-5" style="background: #f4f8f2;" id="menu">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <small class="text-muted">
-                    Choose menu and order
-                </small>
-                <h1 class="fw-bold mt-2">
-                    Fivius will affigen on <br>
-                    parti-step lioe.
-                </h1>
-                <p class="text-muted mt-3">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Doloremque, perspiciatis. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga distinctio doloremque nihil ullam dolorum consequatur alias ea voluptas, accusamus error exercitationem eius beatae, vitae reprehenderit 
-                    quos inventore possimus molestias magnam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam quo nihil aliquam mollitia perferendis eveniet aut libero natus nam ad, sapiente suscipit dolor minima nesciunt deserunt molestiae quam optio dolores.
-                </p>
-                <button class="btn btn-success rounded-pill px-4">
-                    Learn More
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#project">Project</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                    <button id="theme-toggle" title="Switch to Light Mode">
+                        <i class="bi bi-sun-fill"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="row align-items-center hero-section">
+            <div class="col-md-5 text-center">
+                <div class="image-glow">
+                    <img src="./nana2.png" class="profile-img" alt="profile">
+                </div>
+            </div>
+            <div class="col-md-7">
+                <p class="mb-1" style="color:var(--text)">Hello, I'm</p>
+                <h1 class="hero-name fw-bold">Alvyana<span style="color:var(--accent)"> S </span>Anggraini</h1>
+                <h4 class="mb-3" style="color:var(--text)">And I'm a <span id="typing-text">Frontend Developer</span></h4>
+                <p class="hero-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet iusto tempore possimus voluptatem.</p>
+                <div class="social-icons mb-3">
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-whatsapp"></i></a>
+                    <a href="#"><i class="bi bi-tiktok"></i></a>
+                </div>
+                <a href="#project"><button class="btn btn-info me-2">See My Project</button></a>
+                <button class="btn btn-outline-info">Contact Me</button>
+            </div>
+        </div>
+
+        <div class="row text-center stats mt-4">
+            <div class="col-md-3 stat-item">
+                <i class="bi bi-laptop icon-stat" style="font-size:40px"></i>
+                <p>Coding</p>
+            </div>
+            <div class="col-md-3 stat-item">
+                <i class="bi bi-rocket-takeoff icon-stat" style="font-size:40px"></i>
+                <p>Growing</p>
+            </div>
+            <div class="col-md-3 stat-item">
+                <i class="bi bi-box icon-stat" style="font-size:40px"></i>
+                <p>Project</p>
+            </div>
+            <div class="col-md-3">
+                <i class="bi bi-globe2 icon-stat" style="font-size:40px"></i>
+                <p>Web Build</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ABOUT -->
+<div class="container py-4" id="about">
+    <div class="main-box">
+        <section class="py-5 mt-3">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <p class="logo-text"><span>Discover</span></p>
+                    <h2 class="about-title">About Me</h2>
+                    <p class="about-text mt-4">
+                        My name is Alvyana Septia Anggraini, and I am 16 years old. I was born in Salatiga on March 1, 2010.
+                        I am a creative, curious, and responsible person who enjoys learning new things and exploring different experiences.
+                        I enjoy watching movies, listening to music, and drawing in my free time.
+                        Besides my hobbies, I am interested in digital creativity and technology, especially web design and coding.
+                        I enjoy creating simple projects and learning how websites are built. For me, coding is not only about technology,
+                        but also about expressing ideas and solving problems creatively. I believe that every experience can help me grow
+                        and become a better person in the future.
+                    </p>
+                </div>
+                <div class="col-md-5 text-center mt-4 mt-md-0">
+                    <img src="./nana1.png" class="about-img img-fluid" alt="about">
+                </div>
             </div>
 
-            <div class="col-md-6">
-                <img src="./chick.jpg" class="img-fluid rounded-4" alt="">
+            <div class="info-box mt-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Name:</strong> Alvyana Septia Anggraini</p>
+                        <p><strong>Phone:</strong> +62 888-0693-7012</p>
+                        <p><strong>Experience:</strong> 1 Year</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Age:</strong> 16</p>
+                        <p><strong>Address:</strong> Central Java, Indonesia</p>
+                    </div>
+                </div>
             </div>
-        </div>
+            <br>
+            <a href="./My Experience Creating a Portfolio Websitee.pdf" target="_blank" class="btn btn-info me-2">My Experience</a>
+        </section>
     </div>
-</section>
-
- <!--hubungi-->
-    <div class="container py-5" id="contact">
-      <div class="text-center mb-5">
-      <h2 class="fw-bold">Hubungi Kami</h2>
-        <p class="text-muted">Hubungi kami untuk informasi lebih lanjut</p>  
-      </div>
-
-      <div class="card p-4 ">
-       <div class="row">
-
-       <!-- KIRI -->
-        <div class="col-md-4 bg-light p-3 rounded shadow-sm">
-         <div class="d-flex align-items-start mb-4">
-          <div class="bg-success text-white p-3 rounded me-3">
-           <i class="bi bi-geo-alt"></i>
-         </div>
-
-        <div>
-         <h6 class="fw-bold mb-1">Lokasi Kami</h6>
-          <small class="text-muted">Jl. Khayangan, Swiss</small>
-        </div>
-       </div>
-
-       <div class="d-flex align-items-start mb-4">
-        <div class="bg-success text-white p-3 rounded me-3">
-         <i class="bi bi-telephone"></i>
-       </div>
-
-       <div>
-        <h6 class="fw-bold mb-1">Telephone</h6>
-        <small class="text-muted">+85999345456</small> 
-      </div>
-     </div>
-
-       <div class="d-flex align-items-start">
-        <div class="bg-success text-white p-3 rounded me-3">
-         <i class="bi bi-envelope"></i>
-        </div>
-
-       <div>
-         <h6 class="fw-bold mb-1">Email</h6>
-          <small class="text-muted">cateringofficial@gmail.com</small>
-       </div>
-     </div>
 </div>
 
-     <!-- KANAN -->
-    <div class="col-md-8">
-        <p class="text-success fw-semibold mb-1">BUTUH BANTUAN?</p>
-        <h3 class="fw-bold mb-4">Kirim Pesan</h3>
-    <form>
-     <div class="row mb-3">
-      <div class="col-md-6">
-        <input type="text" class="form-control" placeholder="Masukkan Nama">
-      </div>
+<!-- SKILLS -->
+<div class="container py-4" id="skills">
+    <div class="main-box">
+        <section class="py-5">
+            <div class="text-center mb-5">
+                <h2 class="project-title">MY <span>SKILLS</span></h2>
+                <p class="hero-project">Technical Skills</p>
+            </div>
 
-      <div class="col-md-6">
-        <input type="email" class="form-control" placeholder="Masukkan Email">
-      </div>
+            <div class="row align-items-center mt-5">
+                <div class="col-lg-6">
+                    <div class="skill-item d-flex align-items-center mb-4">
+                        <img src="./html.png" class="skill-icon">
+                        <div class="progress custom-progress w-100 ms-4">
+                            <div class="progress-bar" style="width:92%">92%</div>
+                        </div>
+                    </div>
+                    <div class="skill-item d-flex align-items-center mb-4">
+                        <img src="./css.png" class="skill-icon">
+                        <div class="progress custom-progress w-100 ms-4">
+                            <div class="progress-bar" style="width:85%">85%</div>
+                        </div>
+                    </div>
+                    <div class="skill-item d-flex align-items-center mb-4">
+                        <img src="./js.png" class="skill-icon">
+                        <div class="progress custom-progress w-100 ms-4">
+                            <div class="progress-bar" style="width:50%">50%</div>
+                        </div>
+                    </div>
+                    <div class="skill-item d-flex align-items-center mb-4">
+                        <img src="./tailwind.png" class="skill-icon">
+                        <div class="progress custom-progress w-100 ms-4">
+                            <div class="progress-bar" style="width:30%">30%</div>
+                        </div>
+                    </div>
+                    <div class="skill-item d-flex align-items-center">
+                        <img src="./bootstrap.png" class="skill-icon">
+                        <div class="progress custom-progress w-100 ms-4">
+                            <div class="progress-bar" style="width:50%">50%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="right-side">
+                        <button class="tools-btn mb-5">Software & Tools</button>
+                        <div class="row text-center">
+                            <div class="col-4">
+                                <img src="./vscode.png" class="tool-icon">
+                                <p class="tool-text mt-3">Visual Studio Code</p>
+                            </div>
+                            <div class="col-4">
+                                <img src="./github.png" class="tool-icon">
+                                <p class="tool-text mt-3">Github</p>
+                            </div>
+                            <div class="col-4">
+                                <img src="./figma.png" class="tool-icon">
+                                <p class="tool-text mt-3">Figma</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-
-      <div class="mb-3">
-        <input type="text" class="form-control" placeholder="Masukkan Subjek">
-      </div>
-
-      <div class="mb-3">
-        <textarea class="form-control" rows="3" placeholder="Pesan"></textarea>
-      </div>
-
-      <div class="text-end">
-         <button class="btn btn-success px-4">Kirim Pesan</button>
-      </div>
-    </form>
-   </div>
-  </div>
 </div>
-</div>
-    
 
+<!-- PROJECT -->
+<div class="container py-4" id="project">
+    <div class="main-box">
+        <section class="py-5">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="project-card">
+                            <img src="./tugas1.png" class="project-img" alt="">
+                            <div class="project-content">
+                                <h5>Recycle For A Better Future</h5>
+                                <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <div class="project-buttons">
+                                    <a href="./alvyana/tugas1.html" class="btn btn-outline-light btn-sm">See Project</a>
+                                    <button class="btn btn-info btn-sm">Live Demo</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-<footer class="footer-section">
-    <div class="container">
-        <div class="footer-content d-flex justify-content-center align-items-center gap-4 flex-wrap">
-            <span>© 2026 CM</span>
-            <span>Instagram @cateringwebsite</span>
-            <span>Email: hello@catering.com</span>
-        </div>
+                    <div class="col-md-4 d-flex align-items-center justify-content-center">
+                        <div class="text-center">
+                            <h2 class="project-title">MY <span>PROJECT</span></h2>
+                            <p class="hero-project">A showcase of my recent work</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="project-card">
+                            <img src="./tugas2.png" class="project-img" alt="">
+                            <div class="project-content">
+                                <h5>SMK Digital: Inovatif, Terampil, Berkarakter</h5>
+                                <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <div class="project-buttons">
+                                    <a href="../index2.html" class="btn btn-outline-light btn-sm">See Project</a>
+                                    <button class="btn btn-info btn-sm">Live Demo</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="project-card">
+                            <img src="./tugas3.png" class="project-img" alt="">
+                            <div class="project-content">
+                                <h5>Environment: Edukasi Untuk Perubahan</h5>
+                                <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <div class="project-buttons">
+                                    <a href="../tugas3.html" class="btn btn-outline-light btn-sm">See Project</a>
+                                    <button class="btn btn-info btn-sm">Live Demo</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="project-card">
+                            <img src="./tugas4.png" class="project-img" alt="">
+                            <div class="project-content">
+                                <h5>Best Catering Website</h5>
+                                <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <div class="project-buttons">
+                                    <a href="../tugas 4/index.html" class="btn btn-outline-light btn-sm">See Project</a>
+                                    <button class="btn btn-info btn-sm">Live Demo</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="project-card">
+                            <img src="./tugas5.png" class="project-img" alt="">
+                            <div class="project-content">
+                                <h5>Sneaker Store & Custom</h5>
+                                <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <div class="project-buttons">
+                                    <a href="../tugas5/index.html" class="btn btn-outline-light btn-sm">See Project</a>
+                                    <button class="btn btn-info btn-sm">Live Demo</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-</footer>
+</div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- CONTACT -->
+<div class="container py-4" id="contact">
+    <div class="main-box">
+        <section class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="project-title"><span>CONTACT</span> ME</h2>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-5">
+                        <div class="contact-box p-4">
+                            <h3>Get In Touch</h3>
+                            <div class="line mb-4"></div>
+                            <p><i class="bi bi-geo-alt"></i>Krakal Mukti, Tengaran</p>
+                            <p><i class="bi bi-envelope"></i>alvyaaana1@gmail.com</p>
+                            <p><a href="tel:6288806937012"><i class="bi bi-telephone"></i>08806937012</a></p>
+                            <p><a href="https://wa.me/6288806937012" target="_blank"><i class="bi bi-whatsapp"></i>088806937012</a></p>
+                            <p><a href="https://instagram.com/alvyaanaa" target="_blank"><i class="bi bi-instagram"></i>@alvyaanaa</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="contact-box p-4">
+                            <form>
+                                <input type="text" class="form-control mb-3" placeholder="Your Name">
+                                <input type="email" class="form-control mb-3" placeholder="Your Email">
+                                <textarea class="form-control mb-3" rows="5" placeholder="Your Message"></textarea>
+                                <button type="button" class="btn btn-info">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer-section">
+            <div class="footer-box">
+                <div class="footer-logo">
+                    <a class="navbar-brand logo-text" href="#">Alv<span>yana</span>SA</a>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#project">Project</a>
+                    <a href="#contact">Contact</a>
+                    <p class="mt-3">&copy; 2026. All Rights Reserved.</p>
+                </div>
+                <div class="footer-contact">
+                    <div class="footer-icons">
+                        <a href="#"><i class="bi bi-star-fill"></i></a>
+                        <a href="#"><i class="bi bi-heart-fill"></i></a>
+                        <a href="#"><i class="bi bi-moon-stars-fill"></i></a>
+                    </div>
+                    <p>Support: alvyaaana1@gmail.com</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!--JS-->
+<script>
+// THEME TOGGLE 
+const btn  = document.getElementById('theme-toggle');
+const html = document.documentElement;
+
+// Terapkan tema tersimpan
+const saved = localStorage.getItem('theme') || 'dark';
+setTheme(saved);
+
+btn.addEventListener('click', function() {
+    const current = html.getAttribute('data-theme');
+    const next = (current === 'dark') ? 'light' : 'dark';
+    setTheme(next);
+    localStorage.setItem('theme', next);
+});
+
+function setTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    if (theme === 'light') {
+        btn.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
+        btn.title = 'Switch to Dark Mode';
+    } else {
+        btn.innerHTML = '<i class="bi bi-sun-fill"></i>';
+        btn.title = 'Switch to Light Mode';
+    }
+}
+
+// TYPING EFFECT 
+const words  = ['Frontend Developer', 'Web Designer', 'UI/UX Enthusiast', 'Creative Coder'];
+const target = document.getElementById('typing-text');
+let wi = 0, ci = 0, del = false;
+
+function type() {
+    if (!target) return;
+    const word = words[wi];
+    target.textContent = del ? word.slice(0, --ci) : word.slice(0, ++ci);
+    if (!del && ci === word.length) { del = true; return setTimeout(type, 1500); }
+    if (del && ci === 0) { del = false; wi = (wi + 1) % words.length; }
+    setTimeout(type, del ? 60 : 110);
+}
+type();
+
+// SCROLL REVEAL 
+const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+}, { threshold: 0.15 });
+document.querySelectorAll('.hidden').forEach(el => obs.observe(el));
+</script>
+
 </body>
 </html>
